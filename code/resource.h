@@ -16,12 +16,11 @@
 #define IDS_UVF_WID                     12
 #define IDS_UVF_HEI                     13
 #define IDS_UVF_MESH                    14
-#define IDS_SIMPLE                      15
+#define IDS_SIMPLE_UVWFRAME             15
 #define IDB_16BUTS_MASK                 106
 #define IDB_ABOUT_MASK                  106
 #define IDB_MANKUA_WHITE                107
 #define IDB_MANKUA_BLACK                108
-#define IDD_DIALOG1                     109
 #define IDD_ABOUT                       109
 #define IDB_BITMAP2                     111
 #define IDB_HELP_MASK                   112

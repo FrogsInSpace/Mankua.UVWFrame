@@ -144,19 +144,19 @@ static ParamBlockDesc2 skpurem_param_blk ( frame_mod_params, _T("SkeletonPureMod
 	IDD_UVW_FRAME_MOD, IDS_FRAMEMOD_PARAMETERS, 0, 0, NULL, 
 
 	// params
-	uvw_type,			_T("uvw_type"),		TYPE_INT,	0,	IDS_SIMPLE,
+	uvw_type,			_T("uvw_type"),		TYPE_INT,	0,	IDS_SIMPLE_UVWFRAME,
 		p_default,		0,
 		p_range,		0,	1,
 		p_ui,			TYPE_RADIO, 2, IDC_UVW_TYPE, IDC_VCC_TYPE,
 		p_end,
 
-	uvw_channel,		_T("uvw_channel"),	TYPE_INT,	0,	IDS_SIMPLE,
+	uvw_channel,		_T("uvw_channel"),	TYPE_INT,	0, IDS_SIMPLE_UVWFRAME,
 		p_default,		1,
 		p_range, 		1, 99, 
 		p_ui,			TYPE_SPINNER, EDITTYPE_INT, IDC_UVWCH_EDIT, IDC_UVWCH_SPIN, 1.0,
 		p_end,
 
-	frame_node, 		_T("uvw_frame"), 		TYPE_INODE, 	0,		IDS_SIMPLE,
+	frame_node, 		_T("uvw_frame"), 		TYPE_INODE, 	0, IDS_SIMPLE_UVWFRAME,
 		p_ui, 			TYPE_PICKNODEBUTTON, IDC_PICK_FRAME, 
 		p_sclassID,		HELPER_CLASS_ID,
 		p_classID,		UVWFRAME_CLASSID,

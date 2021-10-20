@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -99,7 +97,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     GROUPBOX        "",IDC_STATIC,4,0,217,59
     LTEXT           "UVW Frame 1.0\nFebruary 6, 2009\n\nDeveloped by Diego A. Castaño\nAll Rights Reserved © 2001-2009\nMankua Software Inc.",IDC_STATIC,110,6,109,49
-    CONTROL         107,IDC_MANKUA,"Static",SS_BITMAP,8,6,97,49,WS_EX_CLIENTEDGE
+    CONTROL         IDB_MANKUA_WHITE,IDC_MANKUA,"Static",SS_BITMAP,8,6,97,49,WS_EX_CLIENTEDGE
 END
 
 IDD_UVW_FRAME_MOD DIALOGEX 0, 0, 108, 78
@@ -125,11 +123,17 @@ END
 //
 
 IDB_ABOUT               BITMAP                  "bmp16but.bmp"
+
 IDB_ABOUT_MASK          BITMAP                  "bmp00001.bmp"
+
 IDB_MANKUA_WHITE        BITMAP                  "logo_mankua_white_h76.bmp"
+
 IDB_MANKUA_BLACK        BITMAP                  "logo_mankua_black_h76.bmp"
+
 IDB_HELP_MASK           BITMAP                  "Help_Mask.bmp"
+
 IDB_HELP                BITMAP                  "Help.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -137,8 +141,12 @@ IDB_HELP                BITMAP                  "Help.bmp"
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
+    IDD_UVW_FRAME, DIALOG
+    BEGIN
+    END
+
     IDD_ABOUT, DIALOG
     BEGIN
         LEFTMARGIN, 4
@@ -157,18 +165,16 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.K.) resources
+// English (United Kingdom) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -201,7 +207,7 @@ END
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CLASSNAME           "UVW Frame"
     IDS_FRAME_PARAMETERS    "Parameters"
@@ -217,10 +223,10 @@ BEGIN
     IDS_UVF_WID             "Width"
     IDS_UVF_HEI             "Height"
     IDS_UVF_MESH            "UVW Mesh"
-    IDS_SIMPLE              "Simple"
+    IDS_SIMPLE_UVWFRAME     "Simple"
 END
 
-#endif    // English (U.K.) resources
+#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
