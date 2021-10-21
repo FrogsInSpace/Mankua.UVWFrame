@@ -56,12 +56,20 @@ class UVWFrameModifier : public Modifier{
 		void DeleteThis() { delete this; }
 
 		// Plugin identification
+#if MAX_VERSION_MAJOR < 24		
 		void GetClassName(TSTR& s) { s= TSTR(GetString(IDS_FRAMEMOD_CLASSNAME)); }  
+#else				
+		void GetClassName(TSTR& s, bool localized=false ) { s = TSTR(GetString(IDS_FRAMEMOD_CLASSNAME)); }
+#endif		
+		
+		
 		virtual Class_ID ClassID() { return PUREM_CLASSID;}		
 #if MAX_VERSION_MAJOR < 15 //Max 2013
 		TCHAR *GetObjectName() { return GetString(IDS_FRAMEMOD_CLASSNAME); }
-#else
+#elif MAX_VERSION_MAJOR < 24
 		const TCHAR *GetObjectName() { return GetString(IDS_FRAMEMOD_CLASSNAME); }
+#else
+		const TCHAR *GetObjectName( bool localized = false ) { return GetString(IDS_FRAMEMOD_CLASSNAME); }
 #endif
 		// Defines the behavior for this modifier
 		// This is currently setup to be basic geometry 
@@ -105,7 +113,12 @@ public:
 		// SubAnim support
 		int NumSubs() { return 1; }
 		Animatable* SubAnim(int i);
+		
+#if MAX_VERSION_MAJOR < 24		
 		TSTR SubAnimName(int i);
+#else
+		TSTR SubAnimName(int i, bool localized = false);
+#endif
 
 
 		// Direct paramblock access

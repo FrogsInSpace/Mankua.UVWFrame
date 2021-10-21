@@ -30,6 +30,10 @@ class UVWFrameClassDesc:public ClassDesc2 {
 	int 			IsPublic()					{ return TRUE; }
 	void *			Create( BOOL loading )		{ return new UVWFrameObject; }
 	const TCHAR *	ClassName()					{ return GetString(IDS_UVWFRAME_CLASSNAME); }
+	
+#if MAX_VERSION_MAJOR >= 24	
+	const TCHAR *	NonLocalizedClassName()		{ return ClassName(); }
+#endif 
 	SClass_ID		SuperClassID()				{ return HELPER_CLASS_ID; }
 	Class_ID 		ClassID()					{ return UVWFRAME_CLASSID; }
 	const TCHAR* 	Category()					{ return _T("");  }
@@ -304,7 +308,13 @@ Animatable* UVWFrameObject::SubAnim(int i) 	{
 		default: return NULL;
 		}
 	}
-TSTR UVWFrameObject::SubAnimName(int i) {
+
+#if MAX_VERSION_MAJOR < 24
+TSTR UVWFrameObject::SubAnimName(int i) 
+#else
+TSTR UVWFrameObject::SubAnimName(int i, bool localized ) 
+#endif
+{
 	switch (i) {
 		case 0: return GetString(IDS_FRAME_PARAMETERS);
 		default: return _T("");

@@ -148,7 +148,13 @@ void UVWFrameObject::GetWorldBoundBox(
  |	Hit Testing and Object Snapping 
 \*===========================================================================*/
 int UVWFrameObject::HitTest(TimeValue t, INode *inode, int type, int crossing, int flags, IPoint2 *p, ViewExp *vpt) {
+
+#if MAX_VERSION_MAJOR < 24
 	Matrix3 tm(1);	
+#else
+	Matrix3 tm;
+#endif
+
 	HitRegion hitRegion;
 	DWORD	savedLimits;
 	float l,w,h; Interval ivalid = FOREVER;	
@@ -191,7 +197,13 @@ void UVWFrameObject::SelectInMankua( int sel ) {
 	}
 
 int UVWFrameObject::Display(TimeValue t, INode* inode, ViewExp *vpt, int flags) {
+
+#if MAX_VERSION_MAJOR < 24
 	Matrix3 tm(1);
+#else
+	Matrix3 tm;
+#endif
+
 	tm = inode->GetObjectTM(t);	
 	vpt->getGW()->setTransform(tm);
 

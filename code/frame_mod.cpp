@@ -27,6 +27,11 @@ class UVWFrameModClassDesc:public ClassDesc2 {
 	int 			IsPublic()					{ return TRUE; }
 	void *			Create( BOOL loading )		{ return new UVWFrameModifier; }
 	const TCHAR *	ClassName()					{ return GetString(IDS_FRAMEMOD_CLASSNAME); }
+	
+#if MAX_VERSION_MAJOR >= 24
+	const TCHAR *	NonLocalizedClassName()		{ return ClassName(); }
+#endif
+
 	SClass_ID		SuperClassID()				{ return OSM_CLASS_ID; }
 	Class_ID 		ClassID()					{ return PUREM_CLASSID; }
 	const TCHAR* 	Category()					{ return _T("");  }
@@ -238,7 +243,11 @@ Animatable* UVWFrameModifier::SubAnim(int i)
 	}
 }
 
+#if MAX_VERSION_MAJOR < 24
 TSTR UVWFrameModifier::SubAnimName(int i) 
+#else
+TSTR UVWFrameModifier::SubAnimName(int i, bool localized ) 
+#endif
 {
 	switch (i)
 	{

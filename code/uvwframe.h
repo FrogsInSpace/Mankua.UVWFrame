@@ -96,7 +96,13 @@ class UVWFrameObject: public HelperObject
 		// Animatable methods
 		void DeleteThis() { delete this; }
 		Class_ID ClassID() { return UVWFRAME_CLASSID; }  
+
+#if MAX_VERSION_MAJOR < 24
 		void GetClassName(TSTR& s) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
+#else
+		void GetClassName(TSTR& s, bool localized = false ) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
+#endif
+
 		int IsKeyable(){ return 0;}
 		
 		// Direct paramblock access
@@ -106,7 +112,12 @@ class UVWFrameObject: public HelperObject
 
 		int NumSubs() { return 1; }  
 		Animatable* SubAnim(int i);
+		
+#if MAX_VERSION_MAJOR < 24
 		TSTR SubAnimName(int i);
+#else
+		TSTR SubAnimName(int i, bool localized = false);
+#endif
 
 		// From ref
  		int NumRefs() { return 2; }
@@ -122,7 +133,7 @@ public:
 #if MAX_VERSION_MAJOR < 15 //Max 2013
 		TCHAR *GetObjectName() { return GetString(IDS_UVWFRAME_CLASSNAME); }
 #else
-		const TCHAR *GetObjectName() { return GetString(IDS_UVWFRAME_CLASSNAME); }
+		const TCHAR *GetObjectName( bool localized = false ) { return GetString(IDS_UVWFRAME_CLASSNAME); }
 #endif
 
 #if MAX_VERSION_MAJOR < 9 
