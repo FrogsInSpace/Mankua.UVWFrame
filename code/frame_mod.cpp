@@ -14,7 +14,11 @@
 \*===========================================================================*/
 
 #include "frame_mod.h"
-#include "..\..\texlay\code\texlay.h"
+
+// JW: removed direct project dependency
+//#include "..\..\texlay\code\texlay.h"
+
+#include "uvwframe.h"
 
 IObjParam* UVWFrameModifier::ip = NULL;
 

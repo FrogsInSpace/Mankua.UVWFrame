@@ -22,7 +22,14 @@
 
 #include "iparamm2.h"
 #include "resource.h"
-#include "..\..\texlay\code\texlay.h"
+
+
+// IMPORTANT:
+// JW: removed direct project dependency
+//#include "..\..\texlay\code\texlay.h"
+
+// this classID is shared with TexLayers code
+#define	UVWFRAME_CLASSID		Class_ID(0x388676bb, 0x7752389b)
 
 TCHAR *GetString(int id);
 extern ClassDesc* GetUVWFrameDesc();
