@@ -59,7 +59,7 @@ class UVWFrameModifier : public Modifier{
 #if MAX_VERSION_MAJOR < 24		
 		void GetClassName(TSTR& s) { s= TSTR(GetString(IDS_FRAMEMOD_CLASSNAME)); }  
 #else				
-		void GetClassName(TSTR& s, bool localized=false ) { s = TSTR(GetString(IDS_FRAMEMOD_CLASSNAME)); }
+		void GetClassName(TSTR& s, bool localized=false ) const { s = TSTR(GetString(IDS_FRAMEMOD_CLASSNAME)); }
 #endif		
 		
 		
@@ -69,7 +69,7 @@ class UVWFrameModifier : public Modifier{
 #elif MAX_VERSION_MAJOR < 24
 		const TCHAR *GetObjectName() { return GetString(IDS_FRAMEMOD_CLASSNAME); }
 #else
-		const TCHAR *GetObjectName( bool localized = false ) { return GetString(IDS_FRAMEMOD_CLASSNAME); }
+		const TCHAR *GetObjectName( bool localized = false ) const { return GetString(IDS_FRAMEMOD_CLASSNAME); }
 #endif
 		// Defines the behavior for this modifier
 		// This is currently setup to be basic geometry 

@@ -44,96 +44,106 @@ public:
 	int * vtx; 
 	};
 
-class UVWFrameObject: public HelperObject
+class UVWFrameObject : public HelperObject
 {
-	public:
+public:
 
-		int creating;
+	int creating;
 
-		int selectedInMankua;
+	int selectedInMankua;
 
-		IParamBlock2 *pblock2;
-		static IObjParam *ip;
+	IParamBlock2 *pblock2;
+	static IObjParam *ip;
 
-		INode *uvwMesh;
+	INode *uvwMesh;
 
-		// Snap suspension flag (TRUE during creation only)
-		BOOL suspendSnap;
-					
-		float simple;
- 		int extDispFlags;
+	// Snap suspension flag (TRUE during creation only)
+	BOOL suspendSnap;
 
-		UVWFrameObject();
-		~UVWFrameObject();
-		
-		// From BaseObject
-		int HitTest(TimeValue t, INode* inode, int type, int crossing, int flags, IPoint2 *p, ViewExp *vpt);
-		void Snap(TimeValue t, INode* inode, SnapInfo *snap, IPoint2 *p, ViewExp *vpt);
-		void SetExtendedDisplay(int flags);
-		int Display(TimeValue t, INode* inode, ViewExp *vpt, int flags);
-		CreateMouseCallBack* GetCreateMouseCallBack();
-		void DrawBox(TimeValue t, INode *inode, ViewExp *vpt, BOOL hit_testing);
+	float simple;
+	int extDispFlags;
 
-		void BeginEditParams( IObjParam *ip, ULONG flags,Animatable *prev);
-		void EndEditParams( IObjParam *ip, ULONG flags,Animatable *next);
-		void InvalidateUI();
+	UVWFrameObject();
+	~UVWFrameObject();
 
-		// From Object
-		ObjectState Eval(TimeValue time);
+	// From BaseObject
+	int HitTest(TimeValue t, INode* inode, int type, int crossing, int flags, IPoint2 *p, ViewExp *vpt);
+	void Snap(TimeValue t, INode* inode, SnapInfo *snap, IPoint2 *p, ViewExp *vpt);
+	void SetExtendedDisplay(int flags);
+	int Display(TimeValue t, INode* inode, ViewExp *vpt, int flags);
+	CreateMouseCallBack* GetCreateMouseCallBack();
+	void DrawBox(TimeValue t, INode *inode, ViewExp *vpt, BOOL hit_testing);
 
-		void InitNodeName(TSTR& s) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
-		ObjectHandle ApplyTransform(Matrix3& matrix) {return this;}
-		Interval ObjectValidity(TimeValue t);
+	void BeginEditParams(IObjParam *ip, ULONG flags, Animatable *prev);
+	void EndEditParams(IObjParam *ip, ULONG flags, Animatable *next);
+	void InvalidateUI();
 
-		// We don't convert to anything
-		int CanConvertToType(Class_ID obtype) {return FALSE;}
-		Object* ConvertToType(TimeValue t, Class_ID obtype) {assert(0);return NULL;}
-		
-		void GetWorldBoundBox(TimeValue t, INode *mat, ViewExp *vpt, Box3& box );
-		void GetLocalBoundBox(TimeValue t, INode *mat, ViewExp *vpt, Box3& box );
-		int DoOwnSelectHilite()	{ return 1; }
+	// From Object
+	ObjectState Eval(TimeValue time);
 
-		// Animatable methods
-		void DeleteThis() { delete this; }
-		Class_ID ClassID() { return UVWFRAME_CLASSID; }  
+	void InitNodeName(TSTR& s) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
+	ObjectHandle ApplyTransform(Matrix3& matrix) { return this; }
+	Interval ObjectValidity(TimeValue t);
+
+	// We don't convert to anything
+	int CanConvertToType(Class_ID obtype) { return FALSE; }
+	Object* ConvertToType(TimeValue t, Class_ID obtype) { assert(0); return NULL; }
+
+	void GetWorldBoundBox(TimeValue t, INode *mat, ViewExp *vpt, Box3& box);
+	void GetLocalBoundBox(TimeValue t, INode *mat, ViewExp *vpt, Box3& box);
+	int DoOwnSelectHilite() { return 1; }
+
+	// Animatable methods
+	void DeleteThis() { delete this; }
+	Class_ID ClassID() { return UVWFRAME_CLASSID; }
 
 #if MAX_VERSION_MAJOR < 24
-		void GetClassName(TSTR& s) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
+	void GetClassName(TSTR& s) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
 #else
-		void GetClassName(TSTR& s, bool localized = false ) { s = GetString(IDS_UVWFRAME_CLASSNAME); }
+	void GetClassName(TSTR& s, bool localized = false) const
+	{
+		UNUSED_PARAM(localized);
+		s = GetString(IDS_UVWFRAME_CLASSNAME);
+	}
+
 #endif
 
-		int IsKeyable(){ return 0;}
-		
-		// Direct paramblock access
-		int	NumParamBlocks() { return 1; }	
-		IParamBlock2* GetParamBlock(int i) { return pblock2; }
-		IParamBlock2* GetParamBlockByID(BlockID id) { return (pblock2->ID() == id) ? pblock2 : NULL; }
+	int IsKeyable() { return 0; }
 
-		int NumSubs() { return 1; }  
-		Animatable* SubAnim(int i);
-		
+	// Direct paramblock access
+	int	NumParamBlocks() { return 1; }
+	IParamBlock2* GetParamBlock(int i) { return pblock2; }
+	IParamBlock2* GetParamBlockByID(BlockID id) { return (pblock2->ID() == id) ? pblock2 : NULL; }
+
+	int NumSubs() { return 1; }
+	Animatable* SubAnim(int i);
+
 #if MAX_VERSION_MAJOR < 24
-		TSTR SubAnimName(int i);
+	TSTR SubAnimName(int i);
 #else
-		TSTR SubAnimName(int i, bool localized = false);
+	TSTR SubAnimName(int i, bool localized = false);
 #endif
 
-		// From ref
- 		int NumRefs() { return 2; }
-		RefTargetHandle GetReference(int i);
+	// From ref
+	int NumRefs() { return 2; }
+	RefTargetHandle GetReference(int i);
 #if MAX_VERSION_MAJOR < 14
-		void SetReference(int i, RefTargetHandle rtarg);
+	void SetReference(int i, RefTargetHandle rtarg);
 #else
 private:
-		virtual void SetReference(int i, RefTargetHandle rtarg);
+	virtual void SetReference(int i, RefTargetHandle rtarg);
 public:
 #endif
 
 #if MAX_VERSION_MAJOR < 15 //Max 2013
-		TCHAR *GetObjectName() { return GetString(IDS_UVWFRAME_CLASSNAME); }
+	TCHAR *GetObjectName() { return GetString(IDS_UVWFRAME_CLASSNAME); }
 #else
-		const TCHAR *GetObjectName( bool localized = false ) { return GetString(IDS_UVWFRAME_CLASSNAME); }
+	const TCHAR *GetObjectName(bool localized = false) const
+	{
+		UNUSED_PARAM(localized);
+		return GetString(IDS_UVWFRAME_CLASSNAME);
+	}
+
 #endif
 
 #if MAX_VERSION_MAJOR < 9 
