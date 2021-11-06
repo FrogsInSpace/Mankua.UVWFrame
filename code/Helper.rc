@@ -90,7 +90,7 @@ BEGIN
     CONTROL         "A",IDC_TL_HELP,"CustButton",WS_TABSTOP,71,5,15,14
 END
 
-IDD_ABOUT DIALOGEX 0, 0, 225, 63
+IDD_ABOUT DIALOGEX 0, 0, 225, 78
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About UVW Frame"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -98,6 +98,7 @@ BEGIN
     GROUPBOX        "",IDC_STATIC,4,0,217,59
     LTEXT           "UVW Frame 1.0\nFebruary 6, 2009\n\nDeveloped by Diego A. Castaño\nAll Rights Reserved © 2001-2009\nMankua Software Inc.",IDC_STATIC,110,6,109,49
     CONTROL         IDB_MANKUA_WHITE,IDC_MANKUA,"Static",SS_BITMAP,8,6,97,49,WS_EX_CLIENTEDGE
+    CTEXT           "Recompiled by\n Josef 'spacefrog' Wienerroither",IDC_STATIC,4,58,216,19,SS_CENTERIMAGE,WS_EX_STATICEDGE
 END
 
 IDD_UVW_FRAME_MOD DIALOGEX 0, 0, 108, 78
@@ -152,7 +153,7 @@ BEGIN
         LEFTMARGIN, 4
         RIGHTMARGIN, 221
         TOPMARGIN, 4
-        BOTTOMMARGIN, 59
+        BOTTOMMARGIN, 74
     END
 
     IDD_UVW_FRAME_MOD, DIALOG
@@ -164,6 +165,17 @@ BEGIN
     END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
