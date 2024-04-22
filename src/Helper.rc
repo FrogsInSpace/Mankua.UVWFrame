@@ -123,17 +123,17 @@ END
 // Bitmap
 //
 
-IDB_ABOUT               BITMAP                  "bmp16but.bmp"
+IDB_ABOUT               BITMAP                  "res/bmp16but.bmp"
 
-IDB_ABOUT_MASK          BITMAP                  "bmp00001.bmp"
+IDB_ABOUT_MASK          BITMAP                  "res/bmp00001.bmp"
 
-IDB_MANKUA_WHITE        BITMAP                  "logo_mankua_white_h76.bmp"
+IDB_MANKUA_WHITE        BITMAP                  "res/logo_mankua_white_h76.bmp"
 
-IDB_MANKUA_BLACK        BITMAP                  "logo_mankua_black_h76.bmp"
+IDB_MANKUA_BLACK        BITMAP                  "res/logo_mankua_black_h76.bmp"
 
-IDB_HELP_MASK           BITMAP                  "Help_Mask.bmp"
+IDB_HELP_MASK           BITMAP                  "res/Help_Mask.bmp"
 
-IDB_HELP                BITMAP                  "Help.bmp"
+IDB_HELP                BITMAP                  "res/Help.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -166,54 +166,6 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_ABOUT AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
-#endif    // English (United States) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// English (United Kingdom) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
-#pragma code_page(1252)
-
-#ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// TEXTINCLUDE
-//
-
-1 TEXTINCLUDE 
-BEGIN
-    "resource.h\0"
-END
-
-2 TEXTINCLUDE 
-BEGIN
-    "#include ""afxres.h""\r\n"
-    "\0"
-END
-
-3 TEXTINCLUDE 
-BEGIN
-    "\r\n"
-    "\0"
-END
-
-#endif    // APSTUDIO_INVOKED
-
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
@@ -238,10 +190,20 @@ BEGIN
     IDS_SIMPLE_UVWFRAME     "Simple"
 END
 
-#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////

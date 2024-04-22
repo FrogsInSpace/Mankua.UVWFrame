@@ -17,6 +17,11 @@
 #include "io.h"
 #include <fcntl.h>
 
+#ifndef _INC_SHELLAPI
+#include <shellapi.h>
+#endif
+
+
 IObjParam*			UVWFrameObject::ip				= NULL;
 
 #define UVWFRAME_LABEL	_T("U V W   F r a m e")

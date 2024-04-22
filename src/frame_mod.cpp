@@ -20,6 +20,11 @@
 
 #include "uvwframe.h"
 
+#ifndef _INC_SHELLAPI
+#include <shellapi.h>
+#endif
+
+
 IObjParam* UVWFrameModifier::ip = NULL;
 
 /*===========================================================================*\

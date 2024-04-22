@@ -397,7 +397,11 @@ void UVWFrameObject::SaveUVW(HWND hWnd) {
 	ofn.lpstrFilter     = fl;
 	ofn.lpstrFile       = fname;
 	ofn.nMaxFile        = 256;    
+#if MAX_RELEASE < 27000
 	ofn.lpstrInitialDir = ip->GetDir(APP_EXPORT_DIR);
+#else
+	ofn.lpstrInitialDir = (ip->GetDir(APP_EXPORT_DIR)).data();
+#endif
 	ofn.Flags           = OFN_HIDEREADONLY|OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST;
 	ofn.lpstrDefExt     = _T("uvw");
 	ofn.lpstrTitle      = title;
@@ -524,7 +528,11 @@ void UVWFrameObject::LoadUVW(HWND hWnd) {
 	ofn.lpstrFilter     = fl;
 	ofn.lpstrFile       = fname;
 	ofn.nMaxFile        = 256;    
+#if MAX_RELEASE < 27000
 	ofn.lpstrInitialDir = ip->GetDir(APP_EXPORT_DIR);
+#else
+	ofn.lpstrInitialDir = (ip->GetDir(APP_EXPORT_DIR)).data();
+#endif
 	ofn.Flags           = OFN_HIDEREADONLY|OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST;
 	ofn.lpstrDefExt     = _T("uvw");
 	ofn.lpstrTitle      = title;
