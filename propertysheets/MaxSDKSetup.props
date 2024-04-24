@@ -68,10 +68,11 @@
     <Import Project="$(MaxSDKPath)\ProjectSettings\propertySheets\3dsmax.general.project.settings.props" />
 	</ImportGroup>
   <PropertyGroup Label="SDK Paths">
-    <MaxSdkInc>$(MaxSDKPath)\include</MaxSdkInc>
-    <MaxSdkLib>$(MaxSDKPath)\lib\x64\Release</MaxSdkLib>
+		<MaxSdkInc>$(MaxSDKPath)\include</MaxSdkInc>
+		<MaxSdkLib>$(MaxSDKPath)\lib\x64\Release</MaxSdkLib>
+		<IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</IntDir>
+		<OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
-  <ImportGroup Label="PropertySheets" />
   <!-- Max2013 and earlier used a different layout in the SDK folders-->
   <PropertyGroup Condition="'$(MaxSDKRelease)'=='2013' Or '$(MaxSDKRelease)'=='2012' Or '$(MaxSDKRelease)'=='2011' Or '$(MaxSDKRelease)'=='2010' Or '$(MaxSDKRelease)'=='2009' Or '$(MaxSDKRelease)'=='2008'  Or '$(MaxSDKRelease)'=='9'">
     <MaxSdkLib>$(MaxSDKPath)\x64\lib\</MaxSdkLib>

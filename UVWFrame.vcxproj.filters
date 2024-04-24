@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="res">
+      <UniqueIdentifier>{78bc1fe6-7222-4434-95e9-16a544c96184}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src/Plugin.cpp" />
+    <ClCompile Include="src/frame_mod.cpp" />
+    <ClCompile Include="src/frame_mod_edit.cpp" />
+    <ClCompile Include="src/uvwframe.cpp" />
+    <ClCompile Include="src/uvwframe_mesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src/frame_mod.h" />
+    <ClInclude Include="src/plugin.h" />
+    <ClInclude Include="src/resource.h" /> 
+    <ClInclude Include="src/uvwframe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src/Helper.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src/Plugin.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src/res/bmp00001.bmp">
+      <Filter>res</Filter>
+    </None>
+    <None Include="src/res/bmp16but.bmp">
+      <Filter>res</Filter>
+    </None>
+    <None Include="src/res/Help.bmp">
+      <Filter>res</Filter>
+    </None>
+    <None Include="src/res/Help_Mask.bmp">
+      <Filter>res</Filter>
+    </None>
+    <None Include="src/res/logo_mankua_black_h76.bmp">
+      <Filter>res</Filter>
+    </None>
+    <None Include="src/res/logo_mankua_white_h76.bmp">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+</Project>
