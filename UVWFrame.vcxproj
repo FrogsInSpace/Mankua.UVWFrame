@@ -5,48 +5,52 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Hybrid - Max2025|x64">
-      <Configuration>Hybrid - Max2025</Configuration>
+    <ProjectConfiguration Include="Hybrid-Max2025|x64">
+      <Configuration>Hybrid-Max2025</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2026|x64">
-      <Configuration>Release - Max2026</Configuration>
+    <ProjectConfiguration Include="Release-Max2027|x64">
+      <Configuration>Release-Max2027</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2025|x64">
-      <Configuration>Release - Max2025</Configuration>
+    <ProjectConfiguration Include="Release-Max2026|x64">
+      <Configuration>Release-Max2026</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2024|x64">
-      <Configuration>Release - Max2024</Configuration>
+    <ProjectConfiguration Include="Release-Max2025|x64">
+      <Configuration>Release-Max2025</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2023|x64">
-      <Configuration>Release - Max2023</Configuration>
+    <ProjectConfiguration Include="Release-Max2024|x64">
+      <Configuration>Release-Max2024</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2022|x64">
-      <Configuration>Release - Max2022</Configuration>
+    <ProjectConfiguration Include="Release-Max2023|x64">
+      <Configuration>Release-Max2023</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2021|x64">
-      <Configuration>Release - Max2021</Configuration>
+    <ProjectConfiguration Include="Release-Max2022|x64">
+      <Configuration>Release-Max2022</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2020|x64">
-      <Configuration>Release - Max2020</Configuration>
+    <ProjectConfiguration Include="Release-Max2021|x64">
+      <Configuration>Release-Max2021</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2019|x64">
-      <Configuration>Release - Max2019</Configuration>
+    <ProjectConfiguration Include="Release-Max2020|x64">
+      <Configuration>Release-Max2020</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2018|x64">
-      <Configuration>Release - Max2018</Configuration>
+    <ProjectConfiguration Include="Release-Max2019|x64">
+      <Configuration>Release-Max2019</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Max2017|x64">
-      <Configuration>Release - Max2017</Configuration>
+    <ProjectConfiguration Include="Release-Max2018|x64">
+      <Configuration>Release-Max2018</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release-Max2017|x64">
+      <Configuration>Release-Max2017</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -59,7 +63,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>	
   <PropertyGroup>
-	    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <TargetName>$(ProjectName)_$(MaxSDKRelease)_$(PlatformTarget)</TargetName>
     <TargetExt>.dlo</TargetExt>
   </PropertyGroup>
@@ -131,6 +134,13 @@
       </StripPrivateSymbols>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <!-- clear RunMUIRCT postbuild event -->
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>	
 	<ItemGroup>
     <Image Include="src/res/bmp00001.bmp" />
     <Image Include="src/res/bmp16but.bmp" />

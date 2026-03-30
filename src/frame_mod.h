@@ -74,8 +74,8 @@ class UVWFrameModifier : public Modifier{
 		// Defines the behavior for this modifier
 		// This is currently setup to be basic geometry 
 		// modification of deformable objects
-		ChannelMask ChannelsUsed()  { return PART_GEOM|PART_TOPO|PART_TEXMAP|PART_VERTCOLOR; }
-		ChannelMask ChannelsChanged() { return PART_GEOM|PART_TOPO|PART_TEXMAP|PART_VERTCOLOR; }
+		ChannelMask ChannelsUsed()  { return static_cast<ChannelMask>(PART_GEOM|PART_TOPO|PART_TEXMAP|PART_VERTCOLOR); }
+		ChannelMask ChannelsChanged() { return static_cast<ChannelMask>(PART_GEOM|PART_TOPO|PART_TEXMAP|PART_VERTCOLOR); }
 		Class_ID InputType() { return defObjectClassID; }
 		BOOL ChangeTopology() {return FALSE;}
 
